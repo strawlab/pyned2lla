@@ -1,5 +1,9 @@
 # pyned2lla - NED (North East Down) to LLA (Latitude Longitude Altitude) conversion for Python
 
+## Installation
+
+`pip install pyned2lla`
+
 ## Example use
 
 ```python
