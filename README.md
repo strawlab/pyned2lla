@@ -27,3 +27,15 @@ The above should print approximately `(48.00771378931424, 7.8561542926911985, 26
 ## License
 
 MIT license
+
+## Development
+
+### Develop locally
+
+```bash
+maturin develop
+```
+
+### Publish a new release
+
+Publishing new releases is performed automatically by Github CI when a new tag is pushed.
