@@ -14,4 +14,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 coord_transforms = "1.4.0"
-pyo3 = "0.22.0"
+pyo3 = "0.24.0"
