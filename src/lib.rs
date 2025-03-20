@@ -31,10 +31,27 @@ fn ned2lla(
     Ok((lla[0], lla[1], lla[2]))
 }
 
+#[pyfunction]
+fn lla2ned(
+    lat0: f64,
+    lon0: f64,
+    alt0: f64,
+    lat: f64,
+    lon: f64,
+    alt: f64,
+    geo_ellipsoid: &GeoEllipsoid,
+) -> PyResult<(f64, f64, f64)> {
+    let lla0 = Vector3::new(lat0, lon0, alt0);
+    let lla = Vector3::new(lat, lon, alt);
+    let ned = coord_transforms::geo::lla2ned(&lla0, &lla, &geo_ellipsoid.inner);
+    Ok((ned[0], ned[1], ned[2]))
+}
+
 /// A Python module implemented in Rust.
 #[pymodule]
 fn pyned2lla(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(ned2lla, m)?)?;
+    m.add_function(wrap_pyfunction!(lla2ned, m)?)?;
     m.add_function(wrap_pyfunction!(wgs84, m)?)?;
     Ok(())
 }
