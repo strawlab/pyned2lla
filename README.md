@@ -1,5 +1,9 @@
 # pyned2lla - NED (North East Down) to LLA (Latitude Longitude Altitude) conversion for Python
 
+This is a packages some coordinate transforms from the
+[`coord_transforms`](https://crates.io/crates/coord_transforms) rust crate to be
+used in Python.
+
 ## Installation
 
 `pip install pyned2lla`
